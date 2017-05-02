@@ -15,10 +15,10 @@ while loop == "1": #Loopan ef loopið verður 1 þá spilast leikurinn
     shuffle(spilastokkur)        # stokkar spilinn
 
 
-    spilamadur = spilastokkur[0:3] #skipt stokknum helming og helming
-    tolvan = spilastokkur[3:6]
-    stadap = 3
-    stadat = 3
+    spilamadur = spilastokkur[26:] #skipt stokknum helming og helming
+    tolvan = spilastokkur[0:26]
+    stadap = 26
+    stadat = 26
 
     while (spilamadur !=0 or tolvan != 0): #ef tolvan eða spilamaður er ekki með 0 þá heldur leikurinn áfram að spilast
         vinningsbunki = [] #bunkinn ef það skyldi koma jafntefli
