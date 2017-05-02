@@ -15,10 +15,10 @@ while loop == "1": #Loopan ef loopið verður 1 þá spilast leikurinn
     shuffle(spilastokkur)        # stokkar spilinn
 
 
-    spilamadur = spilastokkur[:26] #skipt stokknum helming og helming
-    tolvan = spilastokkur[26:]
-    stadap = 26
-    stadat = 26
+    spilamadur = spilastokkur[0:3] #skipt stokknum helming og helming
+    tolvan = spilastokkur[3:6]
+    stadap = 3
+    stadat = 3
 
     while (spilamadur !=0 or tolvan != 0): #ef tolvan eða spilamaður er ekki með 0 þá heldur leikurinn áfram að spilast
         vinningsbunki = [] #bunkinn ef það skyldi koma jafntefli
@@ -32,7 +32,16 @@ while loop == "1": #Loopan ef loopið verður 1 þá spilast leikurinn
             print("Tölvan kláraði öll spilinn!")
             print("Þú vannst leikinn, til hamingju!")
             break
-      
+        
+        '''
+        print("+++++++++++++++++++")
+        print(spilamadur)
+        print("+++++++++++++++++++")
+        print(tolvan)                     #Til þess að sjá hver heldur á hvaða spil einnig hvaða spil eru haldinn í jafnteflis búnkann
+        print("+++++++++++++++++++")      #Mátt kveikja á þvi en þetta er bara auka
+        print(vinningsbunki)
+        print("+++++++++++++++++++")
+        '''
         print("")
         print("")
         print ("Þú dróst!")
@@ -45,11 +54,9 @@ while loop == "1": #Loopan ef loopið verður 1 þá spilast leikurinn
         print ("|5| Einkunn læris  = ",spilamadur[0][5])
         print ("|6| Frjósemi  = ",spilamadur[0][6])
         print ("|7| Gerð / Þykkt bakvöðva  = ",spilamadur[0][7])
-        print ("|9| Einkun fyrir malir  = ",spilamadur[0][8])
+        print ("|8| Einkun fyrir malir  = ",spilamadur[0][8])
         
         val = int(input("Sláðu inn töluna sem þér langar velja?: "))# hér er valið flokk
-        if val == 9:#því að ef þú velur 9 þá myndi ekkert koma upp gegnum flokkinn  þvi að 0 telst með, þannig ég þurfti að gera command þannig 8 verður 9 i flokknum
-            val = 8
         
         
         vinningsbunki.append(spilamadur[0])#Bæði spilinn sem verður spilað með verður settur í vinningsbunkann 
@@ -119,14 +126,14 @@ while loop == "1": #Loopan ef loopið verður 1 þá spilast leikurinn
             
         print()
         print("Tölvan á leik")
-        print("Tölvan hugsar")
+        print("Tölvan hugsar", end="")
         text = ( "......")
         for char in text:
-            sys.stdout.write(char) #þetta er svona auka sem mér langaði gera
+             #þetta er svona auka sem mér langaði gera
             sys.stdout.flush() #Command sem lætur eins og tölvan sé að hugsa en það er bara smá pása með time.sleep
-            print (char) #fyrir hverja sekondu þá printast út punktar eins og tölvan sé að hugsa
+            print (char, end="") #fyrir hverja sekondu þá printast út punktar eins og tölvan sé að hugsa
             time.sleep(1) 
-        print ("Tölvan valdi ", tolvaturn)#hér er sagt hvaða númer tölvan valdi
+        print ("\nTölvan valdi ", tolvaturn)#hér er sagt hvaða númer tölvan valdi
         vinningsbunki.append(spilamadur[0]) #spilinn verða svo sett í vinningsbunkann
         vinningsbunki.append(tolvan[0])
         
